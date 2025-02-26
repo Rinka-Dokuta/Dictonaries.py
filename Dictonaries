@@ -1,0 +1,31 @@
+def char_frequency(x):
+    dict = {}
+    for character in x:
+        if character in dict:
+            dict[character] += 1
+        else:
+            dict[character] = 1
+    return dict
+
+enter = char_frequency("hello")
+print(enter)
+
+
+
+def election_winner(votes):
+    vote_count = {}
+
+    for name in votes:
+        if name in vote_count:
+            vote_count[name] += 1
+        else:
+            vote_count[name] = 1
+
+
+    max_vote = max(vote_count.values())
+
+    winner = min(name for name, count in vote_count.items() if count == max_vote)
+    return winner
+
+votes =["Alice", "Bob", "Alice", "Charlie","Bob", "Bob" "Alice"]
+print(election_winner(votes))
